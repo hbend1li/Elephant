@@ -1,0 +1,48 @@
+
+<div class="card" style="padding:0; background-color: #000;"><img src="img/rect3408.png" style="width: 100%"></div>
+
+<div class="card" >
+	<input  type="text" 
+            placeholder="الموضوع او المستوى المراد البحث عنه ..."
+            style="border:0; background-color:#fff; font-size: 24px;"
+            ng-model="q">	
+</div>
+
+<div class="lab" hidden>
+    <div style="background-color: rgba(44, 61, 74, 1.00);" ><a href="index.php?l=0">كل المستويات</a></div>
+    <div style="background-color: #229922;" ><a href="index.php?l=1">الإبتدائي</a></div>
+    <div style="background-color: #c0ca33;" ><a href="index.php?l=2">1</a></div>
+    <div style="background-color: #c0ca33;" ><a href="index.php?l=3">2</a></div>
+    <div style="background-color: #c0ca33;" ><a href="index.php?l=4">3</a></div>
+    <div style="background-color: #c0ca33;" ><a href="index.php?l=5">4</a></div>
+    <div style="background-color: #c0ca33;" ><a href="index.php?l=6">5</a></div>
+    <div style="background-color: #ffc107;" ><a href="index.php?l=7">المتوسط</a></div>
+    <div style="background-color: #ffc107;" ><a href="index.php?l=8">1</a></div>
+    <div style="background-color: #ffc107;" ><a href="index.php?l=9">2</a></div>
+    <div style="background-color: #ffc107;" ><a href="index.php?l=10">3</a></div>
+    <div style="background-color: #ffc107;" ><a href="index.php?l=11">4</a></div>
+    <div style="background-color: #fb8c00;" ><a href="index.php?l=12">الثنوي</a></div>
+    <div style="background-color: #fb8c00;" ><a href="index.php?l=13">1</a></div>
+    <div style="background-color: #fb8c00;" ><a href="index.php?l=14">2</a></div>
+    <div style="background-color: #fb8c00;" ><a href="index.php?l=15">3</a></div>
+    <div style="background-color: #ff5722;" ><a href="index.php?l=16">الجامعي</a></div>
+    <div style="background-color: #235A81;" ><a href="index.php?l=17">التكوين المهني</a></div>
+
+</div>
+
+<div style="width:100%; display:bloc;">
+
+	<div class='minicard' href='#up' ng-repeat="ele in depo | filter:q | limitTo:30 "  ng-click="go(/exo/ele.exo_id)">
+    <!-- onClick='callAjax("bin/article.php?id={{ele.exo_id}}","main_container");'     go(ele.exo_id) -->
+		<!--a ng-href="/exo/:{{ele.exo_id}}"-->
+            <img ng-src="img/mat/{{ele.img}}.png">
+    		<div>
+    			<b>{{ele.subject}}</b><br/>
+    			<b>المستوى</b>: {{ele.niveau}}<br/>
+    			{{ele.exercice}}
+    		</div>
+    		<div class="prop">{{ele.date_d}} | {{ele.name}}</div>
+        <!--/a-->
+	</div>
+
+</div>
