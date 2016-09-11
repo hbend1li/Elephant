@@ -555,6 +555,13 @@ hr{
     transition-timing-function: linear;
     transition-delay: 0s;
 
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently
+                                    not supported by any browser */
 }
 .minicard img{
     width: 100%;
@@ -632,4 +639,79 @@ hr{
 }
 .lab a{
     color: #fff;
+}
+
+
+
+.ranking {
+  background: url("../img/stars.png") repeat-x 0 0;
+  width: 150px;
+  margin: 0 auto;
+  direction: ltr;
+}
+ 
+.ranking input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.ranking input[type="radio"].star-5:checked ~ span {
+  width: 100%;
+}
+.ranking input[type="radio"].star-4:checked ~ span {
+  width: 80%;
+}
+.ranking input[type="radio"].star-3:checked ~ span {
+  width: 60%;
+}
+.ranking input[type="radio"].star-2:checked ~ span {
+  width: 40%;
+}
+.ranking input[type="radio"].star-1:checked ~ span {
+  width: 20%;
+}
+.ranking label {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 0!important;
+  padding: 0!important;
+  text-indent: -999em;
+  float: left;
+  position: relative;
+  z-index: 10;
+  background: transparent!important;
+  cursor: pointer;
+}
+.ranking label:hover ~ span {
+  background-position: 0 -30px;
+}
+.ranking label.star-5:hover ~ span {
+  width: 100% !important;
+}
+.ranking label.star-4:hover ~ span {
+  width: 80% !important;
+}
+.ranking label.star-3:hover ~ span {
+  width: 60% !important;
+}
+.ranking label.star-2:hover ~ span {
+  width: 40% !important;
+}
+.ranking label.star-1:hover ~ span {
+  width: 20% !important;
+}
+.ranking span {
+  display: block;
+  width: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 30px;
+  background: url("../img/stars.png") repeat-x 0 -60px;
+  -webkit-transition: -webkit-width 0.5s;
+  -moz-transition: -moz-width 0.5s;
+  -ms-transition: -ms-width 0.5s;
+  -o-transition: -o-width 0.5s;
+  transition: width 0.5s;
 }

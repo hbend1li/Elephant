@@ -32,7 +32,7 @@
 
 <div style="width:100%; display:bloc;">
 
-	<div class='minicard' href='#up' ng-repeat="ele in depo | filter:q | limitTo:30 "  ng-click="go(/exo/ele.exo_id)">
+	<div class='minicard' href='#up' ng-repeat="ele in depo | filter:q | limitTo:30 " ng-click="go(ele.exo_id)">
     <!-- onClick='callAjax("bin/article.php?id={{ele.exo_id}}","main_container");'     go(ele.exo_id) -->
 		<!--a ng-href="/exo/:{{ele.exo_id}}"-->
             <img ng-src="img/mat/{{ele.img}}.png">

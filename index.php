@@ -8,6 +8,7 @@
 require_once ("bin/connexion.php");
 require_once ("bin/include.php");
 
+
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //  LOGIN signin
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -181,7 +182,7 @@ menu2;
                 <h1>إتصل بنا</h1>
                 خدمة العملاء المتاحة من السبت إلى الخميس من 17pm إلى 20pm.
                 <br>
-                <div  style="direction: ltr"><b>+(213) 552 38 06 77 <br> hbendali@yandex.com</b></div>
+                <div  style="direction: ltr"><b>+(213) 552 83 06 77 <br> hbendali@elephantmemory.info</b></div>
 
             </div>
             <div style="float: right; width: 33%; padding: 30px; border: 0; border-left: 1px dashed #bbb; direction: rtl;">
@@ -189,7 +190,9 @@ menu2;
                     © 2016 ElephantMemory
                 </div>
             </div>
-            <div style="float: right; width: 33%; padding: 30px; border: 0; direction: rtl;">
+            <div style="float: right; width: 33%; padding: 30px; border: 0; direction: ltr;">
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
 
             </div>
         </div>

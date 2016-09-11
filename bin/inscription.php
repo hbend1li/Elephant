@@ -119,11 +119,11 @@ require_once ("include.php");
             <p>
                 <label style="cursor: pointer">
                 الموافقة على الترخيص <span class="red">*</span>
-                <input type="radio" name="lic" value="1" required onclick="sendButton.disabled = false;"></label>
+                <input type="checkbox" name="lic" value="1" required onclick="sendButton.disabled = false;"></label>
 
-                <label style="cursor: pointer">
+                <!--label style="cursor: pointer">
                 عدم الموافقة على الترخيص
-                <input type="radio" name="lic" value="0" checked onclick="sendButton.disabled = true;"></label>
+                <input type="radio" name="lic" value="0" checked onclick="sendButton.disabled = true;"></label-->
 
             </p>
 

@@ -1,10 +1,9 @@
 /**
  * Created by hbendali on 30/04/16.
  */
+var myElephant = angular
 
-angular
-
-.module('myElephant', ['ngRoute', 'ngMaterial'])
+.module('myElephant', ['ngRoute'])
 
 .config(['$routeProvider',
     function($routeProvider) {
@@ -95,22 +94,65 @@ angular
 })
 
 // view exercice 
-.controller('view_exController', function ($scope, $http, $location, $routeParams) {
-    $scope.phoneId = $routeParams.id;
 
-    $http.get('controller/list.php?profile')
+.controller('view_exController', function ($scope, $http, $location, $routeParams) {
+    $scope.exoId = $routeParams.id;
+/*
+    $scope.niveau = [ 
+        { id: 00, title:'التكوين ما قبل التدريس'},
+        { id: 10, title:'الإبتدائي'},
+        { id: 11, title:'الإبتدائي السنة 1'},
+        { id: 12, title:'الإبتدائي السنة 2'},
+        { id: 13, title:'الإبتدائي السنة 3'},
+        { id: 14, title:'الإبتدائي السنة 4'},
+        { id: 15, title:'الإبتدائي السنة 5'},
+        { id: 20, title:'التعليم المتوسط'},
+        { id: 21, title:'التعليم المتوسط 1'},
+        { id: 22, title:'التعليم المتوسط 2'},
+        { id: 23, title:'التعليم المتوسط 3'},
+        { id: 24, title:'التعليم المتوسط 4'},
+        { id: 40, title:'التعليم الثنوي'},
+        { id: 41, title:'التعليم الثنوي 1'},
+        { id: 42, title:'التعليم الثنوي 2'},
+        { id: 43, title:'التعليم الثنوي 3'},
+        { id: 50, title:'التعليم الجامعي'},
+        { id: 60, title:'التكوين المهني'}
+    ];
+*/
+
+    $http.get('controller/list.php?exo='+ $scope.exoId)
         .then(function(res){
-            $scope.profile = res.data[0];
-            console.log( 'profile' );
+            
+            // replace res.data[0].niveau = 10 to res.data[0].niveau = الإبتدائي
+//            res.data[0].niveau = $scope.niveau.find(function(w){return w.id === res.data[0].niveau ; }).title;
+            
+            $scope.exo = res.data[0];
+            console.log( 'exo' );
             console.log( res.data[0] );
         });
 })
 
-;
 
 
 
-
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
 
 
 
