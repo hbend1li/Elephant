@@ -133,7 +133,6 @@ switch ($_GET["l"]) {
                 <p><a href='#home' >الصفحة الرئسية</a></p>
                 <p><a href='#about' >من نكون</a></p>
                 <p><a href='#guestbook' >سجل الزوار</a></p>
-                <p><a href="" ng-click="showConfirm($event)" >الخروج</a></p>
                 <p><hr></p>
 
                 <?php
