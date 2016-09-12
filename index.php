@@ -15,8 +15,8 @@ if (isset($_GET["logout"])){
     unset($_SESSION["signin"]);
     session_destroy();
 
-    header("Location: ./");
-    exit;
+    //header("Location: ./");
+    //exit;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //  LOGIN signin
