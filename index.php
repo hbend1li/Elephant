@@ -8,7 +8,16 @@
 require_once ("bin/connexion.php");
 require_once ("bin/include.php");
 
+if (isset($_GET["logout"])){
+    session_start();
+    logging( "SIGNOUT ".$_SESSION['name'] ) ;
+    $_SESSION = array();
+    unset($_SESSION["signin"]);
+    session_destroy();
 
+    header("Location: ./");
+    exit;
+}
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //  LOGIN signin
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -50,6 +59,8 @@ if (
         unset($_POST);
     }
 }
+
+
 
 
 
@@ -116,7 +127,7 @@ switch ($_GET["l"]) {
 <body ng-app="myElephant">
 
 <header class="header" id="header" style='background: <?=$l?>'>
-    <img src="img/logo.png">
+    <img src="img/logo.png" >
     <h1 class="header__title"></h1>
 </header>
 
@@ -142,7 +153,7 @@ switch ($_GET["l"]) {
                         <a href="#add_exo" >إضافة تمرين</a><br>
                         <a href="#profile" >تعديل البروفيل</a><br>
                         <br>
-                        <a href="#" onclick="if (confirm('هل أنت متؤكد من الخروج ؟') == true )window.location.assign('#logout');">تسجيل الخروج</a><br>
+                        <a href="#" onclick="if (confirm('هل أنت متؤكد من الخروج ؟') == true )window.location.assign('?logout');">تسجيل الخروج</a><br>
 menu1;
                 else
                     echo <<<menu2
@@ -175,23 +186,29 @@ menu2;
         تتبعون على شبكات التواصل الاجتماعي !
     </div>
     <div style="width: 100%; height: 300px; background-color: #FFFFFF;">
-        <br>
         <div style="float: inherit">
-            <div style="float: right; width: 33%; padding: 30px; border: 0; border-left: 1px dashed #bbb; direction: rtl;">
+            <div style="float: right; width: 33%; padding: 10px 30px; border: 0; border-left: 1px dashed #bbb; direction: rtl;">
                 <h1>إتصل بنا</h1>
-                خدمة العملاء المتاحة من السبت إلى الخميس من 17pm إلى 20pm.
-                <br>
-                <div  style="direction: ltr"><b>+(213) 552 83 06 77 <br> hbendali@elephantmemory.info</b></div>
+                خدمة العملاء المتاحة من السبت إلى الخميس من 17pm إلى 20pm.<br>
+
 
             </div>
             <div style="float: right; width: 33%; padding: 30px; border: 0; border-left: 1px dashed #bbb; direction: rtl;">
                 <div style="text-align: center; color: #999; font-family: 'Proxima Nova','Helvetica','Corbel' ,sans-serif; font-size: 12px;">
-                    © 2016 ElephantMemory
+CC 2016 ElephantMemory <br><br>
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+
                 </div>
             </div>
-            <div style="float: right; width: 33%; padding: 30px; border: 0; direction: ltr;">
+            <div style="float: right; width: 33%; padding: 30px; border: 0; direction: ltr; " align="center">
+                
+                <a href="https://twitter.com/hbendalibraham">
+                    <img src="img/422340138_121326_5479345512930930112.jpg" style="width:110px; border-radius: 100%; border:3px #999 solid; "><br>
+                    <img src="img/tweet.png" width="20px"> <b>Hamza BENDALI BRAHAM</b>
+                </a><br>
+                EMail: <a href="mailto:hbendali@yandex.com">hbendali@yandex.com</a><br>
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+
 
             </div>
         </div>

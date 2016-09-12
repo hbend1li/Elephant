@@ -29,7 +29,7 @@ var myElephant = angular
                 templateUrl: 'templates/guestbook.html'
             })
             .when('/logout', {
-                templateUrl: 'controller/logout.php'
+                templateUrl: '?logout'
             })
             .when('/about', {
                 templateUrl: 'templates/about.html'
