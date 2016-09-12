@@ -1,18 +1,19 @@
-
-
-<div class='card'><p style='text-align: center; font-size: 24px'>{{msg}}</p></div>
-<div class="card" style="padding:0; text-align:right; "><img src="img/under_construction.png"></div>
+<div class="card" style="padding:0; background-color: #01afba;"><img src="img/email2.jpg" style="width: 100%"></div>
 
 <div class="card" >
-    <form method="post" action="bin/controler_guestbook.php" accept-charset="UTF-8">
+    <form method="post" action="controller/guestbook.php" accept-charset="UTF-8">
         <br><br>
         <p>
             الإسم <span class="red">*</span>
-            <input type="text" style="width: 100%" value="" required>
+            <input type="text" name="nom" style="width: 100%" value="" required>
         </p>
-       <p>
-            الحل <span class="red">*</span>
-            <textarea style="width: 100%; height: 200px; overflow: auto" name="solution" required></textarea>
+        <p>
+            البريد الإلكتروني <span class="red">*</span>
+            <input type="email" name="mail" style="width: 100%" value="" required>
+        </p>
+        <p>
+            الإنطبعات <span class="red">*</span>
+            <textarea name="note" style="width: 100%; height: 200px; overflow: auto" required></textarea>
         </p>
 
         <!-- Captcha -->

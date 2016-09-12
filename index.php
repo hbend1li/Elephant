@@ -9,14 +9,16 @@ require_once ("bin/connexion.php");
 require_once ("bin/include.php");
 
 if (isset($_GET["logout"])){
-    session_start();
-    logging( "SIGNOUT ".$_SESSION['name'] ) ;
+    if (isset($_SESSION['name']))
+        logging( "SIGNOUT ".$_SESSION['name'] ) ;
     $_SESSION = array();
     unset($_SESSION["signin"]);
+    
     session_destroy();
+    //session_start();
 
-    //header("Location: ./");
-    //exit;
+    header("Location: ./");
+    exit;
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //  LOGIN signin

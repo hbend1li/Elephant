@@ -49,3 +49,14 @@ function logging($msg)
     $db->fetchAll($sql);
 
 }
+
+function telegram($message) 
+{   
+    $bot_id = "156659332:AAFCyXi94dL02gXaHlzRGw7Mk9WZsfMMN1A";
+    $chat_id = "127969204";
+    $message = htmlentities($message);
+    
+    $url = "https://api.telegram.org/bot$bot_id/sendMessage?chat_id=$chat_id&text=$message";
+    $result = file_get_contents($url);
+    //$result = json_decode($result, true);
+}
