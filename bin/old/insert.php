@@ -1,7 +1,7 @@
 <?php
 
-require_once ("connexion.php");
-require_once ("include.php");
+require_once("connexion.php");
+require_once("include.php");
 
 ?>
 

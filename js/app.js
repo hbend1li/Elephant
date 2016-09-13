@@ -28,8 +28,8 @@ var myElephant = angular
             .when('/guestbook', {
                 templateUrl: 'templates/guestbook.html'
             })
-            .when('/guestbook_ok', {
-                templateUrl: 'templates/guestbook_ok.html'
+            .when('/thx', {
+                templateUrl: 'templates/thx.html'
             })
             .when('/logout', {
                 templateUrl: '?logout'

@@ -1,6 +1,6 @@
 <?php
-require_once ("connexion.php");
-require_once ("include.php");
+require_once("connexion.php");
+require_once("include.php");
     if (isset($_GET["id"]) && ($_GET["id"] !=""))
     {
         $file = $db->fetchAll("SELECT * FROM `mostawdae` WHERE `id`='$_GET[id]'")[0];

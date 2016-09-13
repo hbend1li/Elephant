@@ -1,7 +1,7 @@
 <?php
 
-require_once ("../bin/connexion.php");
-require_once ("../bin/include.php");
+require_once("../bin/connexion.php");
+require_once("../bin/include.php");
 $msg="";
     
     if (

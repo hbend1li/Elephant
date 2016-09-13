@@ -13,7 +13,7 @@ if (
     )
 {
     telegram("[ $_POST[nom] ] $_POST[mail]%0A$_POST[note]");
-    header("Location: ../#/guestbook_ok");
+    header("Location: ../#/thx");
 }
 else
     header("Location: ../#/guestbook");
