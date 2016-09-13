@@ -13,9 +13,9 @@ if (
     )
 {
     telegram("[ $_POST[nom] ] $_POST[mail]%0A$_POST[note]");
-    header("Location: #/about");
+    header("Location: ../#/guestbook_ok");
 }
 else
-    header("Location: " . $_SERVER["HTTP_REFERER"]);
+    header("Location: ../#/guestbook");
     
 exit;

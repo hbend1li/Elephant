@@ -1,7 +1,9 @@
+<div class="card" style="padding:0; background-color: #01afba;"><img src="img/rubon7510.jpg" style="width: 100%"></div>
+
 <div class="card" id="sujet" >
-    <img src="img/rubon7510.jpg" style="width: 100%">
-    <br><br>
-    ID: {{exo.exo_id}}<br>
+    <p>
+    ID: {{exo.exo_id}}
+    </p>
     <hr>
     <p>
 		<b>المستوي / الصف</b> : {{exo.niveau}}<br>
@@ -32,6 +34,8 @@
     <p>
         <b>المرجع</b> :{{exo.ref}}
     </p>
+    <hr>
+
     <div class="ranking">
         <input type="radio" name="star" class="star-1" id="star-1" />
         <label class="star-1" for="star-1">1</label>
@@ -45,7 +49,6 @@
         <label class="star-5" for="star-5">5</label>
         <span></span>
     </div>
-	<hr>
     <p>
         <input type="button" value="طباعة" class="mdl-button" onclick="printDiv('solution');">
         <!--input type="button" value="تحميل ملف PDF" class="mdl-button"-->
