@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - elephant@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="elephant">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="information_schema"/>
+    <schema id="3" name="mysql"/>
+    <schema id="4" name="u3"/>
+    <table id="5" parent="1" name="logging"/>
+    <table id="6" parent="1" name="matiere"/>
+    <table id="7" parent="1" name="mostawdae"/>
+    <table id="8" parent="1" name="niveau_formation"/>
+    <table id="9" parent="1" name="user_account"/>
+    <view id="10" parent="1" name="view_all_exo">
+      <comment>VIEW</comment>
+    </view>
+    <view id="11" parent="1" name="view_profile">
+      <comment>VIEW</comment>
+    </view>
+    <column id="12" parent="5" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="13" parent="5" name="date">
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+      <default-expression>CURRENT_TIMESTAMP</default-expression>
+    </column>
+    <column id="14" parent="5" name="ip">
+      <data-type>varchar(15)|0</data-type>
+    </column>
+    <column id="15" parent="5" name="username">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="16" parent="5" name="msg">
+      <mandatory>1</mandatory>
+      <data-type>text|0</data-type>
+    </column>
+    <index id="17" parent="5" name="id">
+      <columns>id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <column id="18" parent="6" name="matiere">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="19" parent="6" name="couleur">
+      <data-type>varchar(7)|0</data-type>
+      <default-expression>&apos;#000000&apos;</default-expression>
+    </column>
+    <column id="20" parent="6" name="img">
+      <data-type>varchar(20)|0</data-type>
+      <default-expression>&apos;def&apos;</default-expression>
+    </column>
+    <column id="21" parent="7" name="exo_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="22" parent="7" name="user">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="23" parent="7" name="niveau">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="24" parent="7" name="dev">
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="25" parent="7" name="mat">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="26" parent="7" name="langue">
+      <data-type>varchar(2)|0</data-type>
+      <default-expression>&apos;ar&apos;</default-expression>
+    </column>
+    <column id="27" parent="7" name="sujet">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="28" parent="7" name="exercice">
+      <mandatory>1</mandatory>
+      <data-type>text|0</data-type>
+    </column>
+    <column id="29" parent="7" name="solution">
+      <data-type>text|0</data-type>
+    </column>
+    <column id="30" parent="7" name="date_d">
+      <data-type>timestamp|0</data-type>
+      <default-expression>CURRENT_TIMESTAMP</default-expression>
+    </column>
+    <column id="31" parent="7" name="note">
+      <data-type>text|0</data-type>
+    </column>
+    <column id="32" parent="7" name="ranking">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="33" parent="7" name="chk">
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;1&apos;</default-expression>
+    </column>
+    <column id="34" parent="7" name="ref">
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="35" parent="7" name="tag">
+      <data-type>text|0</data-type>
+    </column>
+    <key id="36" parent="7" name="PRIMARY">
+      <columns>exo_id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="37" parent="8" name="id_level">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="38" parent="8" name="title">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="39" parent="9" name="user_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="40" parent="9" name="level">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;1&apos;</default-expression>
+    </column>
+    <column id="41" parent="9" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="42" parent="9" name="sex">
+      <data-type>varchar(1)|0</data-type>
+    </column>
+    <column id="43" parent="9" name="email">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="44" parent="9" name="passwd">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="45" parent="9" name="level_formation">
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="46" parent="9" name="mobile">
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="47" parent="9" name="addr0">
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="48" parent="9" name="addr1">
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="49" parent="9" name="addr2">
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="50" parent="9" name="zipcode">
+      <data-type>varchar(5)|0</data-type>
+    </column>
+    <column id="51" parent="9" name="date_n">
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <column id="52" parent="9" name="last_login">
+      <data-type>timestamp|0</data-type>
+      <default-expression>CURRENT_TIMESTAMP</default-expression>
+    </column>
+    <column id="53" parent="9" name="date_inscription">
+      <data-type>timestamp|0</data-type>
+      <default-expression>CURRENT_TIMESTAMP</default-expression>
+    </column>
+    <column id="54" parent="9" name="slevel">
+      <data-type>varchar(2)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <index id="55" parent="9" name="email">
+      <columns>email</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="56" parent="9" name="PRIMARY">
+      <columns>user_id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="57" parent="9" name="email">
+      <columns>email</columns>
+      <underlying-index>email</underlying-index>
+    </key>
+    <column id="58" parent="10" name="exo_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="59" parent="10" name="niveau">
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="60" parent="10" name="dev">
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="61" parent="10" name="matiere">
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="62" parent="10" name="langue">
+      <data-type>varchar(2)|0</data-type>
+      <default-expression>&apos;ar&apos;</default-expression>
+    </column>
+    <column id="63" parent="10" name="sujet">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="64" parent="10" name="exercice">
+      <mandatory>1</mandatory>
+      <data-type>text|0</data-type>
+    </column>
+    <column id="65" parent="10" name="solution">
+      <data-type>text|0</data-type>
+    </column>
+    <column id="66" parent="10" name="ref">
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="67" parent="10" name="tag">
+      <data-type>text|0</data-type>
+    </column>
+    <column id="68" parent="10" name="ranking">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="69" parent="10" name="img">
+      <data-type>varchar(20)|0</data-type>
+      <default-expression>&apos;def&apos;</default-expression>
+    </column>
+    <column id="70" parent="10" name="date_d">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="71" parent="11" name="user_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+    <column id="72" parent="11" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="73" parent="11" name="sex">
+      <data-type>varchar(1)|0</data-type>
+    </column>
+    <column id="74" parent="11" name="email">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="75" parent="11" name="mobile">
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="76" parent="11" name="addr0">
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="77" parent="11" name="addr1">
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="78" parent="11" name="addr2">
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="79" parent="11" name="zipcode">
+      <data-type>varchar(5)|0</data-type>
+    </column>
+    <column id="80" parent="11" name="date_n">
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <column id="81" parent="11" name="level_formation">
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="82" parent="11" name="slevel">
+      <data-type>varchar(2)|0</data-type>
+      <default-expression>&apos;0&apos;</default-expression>
+    </column>
+  </database-model>
+</dataSource>

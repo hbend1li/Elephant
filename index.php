@@ -124,7 +124,6 @@ switch ($_GET["l"]) {
     <script src="js/angular-route.min.js"></script>
     <script src="js/app.js"></script>
     <script src='js/select.js'></script>
-
 </head>
 <body ng-app="myElephant">
 
@@ -141,38 +140,44 @@ switch ($_GET["l"]) {
 
         <div class="c1">
             <div class="card">
-                <!--p>مرحبابك في مستودع الدروس</p-->
-
-                <p><a href='#home' >الصفحة الرئسية</a></p>
-                <p><a href='#about' >من نكون</a></p>
-                <p><a href='#guestbook' >سجل الزوار</a></p>
-                <p><hr></p>
 
                 <?php
 
-                if (isset($_SESSION["signin"]))
-                    echo <<<menu1
-                        <a href="#add_exo" >إضافة تمرين</a><br>
-                        <a href="#profile" >تعديل البروفيل</a><br>
-                        <br>
-                        <a href="#" onclick="if (confirm('هل أنت متؤكد من الخروج ؟') == true )window.location.assign('?logout');">تسجيل الخروج</a><br>
-menu1;
-                else
-                    echo <<<menu2
-                        <a href="#inscription" >إنشاء حساب جديد</a><br>
-                        <form action="" method="post" autocomplete="on">
-                            <input type="email" name="username" placeholder="البريد الللإلكتروني" /><br>
-                            <input type="password" name="password" placeholder="كلمة المرور" /><br>
-                            <input type="hidden" name="signin">
-                            <input type="submit" value="تسجل الدخول" class="mdl-button"><br><br>
-                        </form>
-menu2;
-                if (isset($err))
-                    echo "<p style='color: #F00;'>$err</p>";
+                if (isset($_SESSION["signin"])) {
+                    echo "
+                        <p align='center'>
+                            <a href=\"#profile\" >
+                                <img src='" . get_gravatar($_SESSION['email']) . "' style=' border-radius: 100%; border:2px #999 solid; '><br>
+                                <b>$_SESSION[name]</b>
+                            </a>
+                        </p>";
+                }else{
+                    echo "
+                        <form action='' method='post' autocomplete='off'>
+                            <p>
+                                <input type='email' name='username' placeholder='البريد الللإلكتروني' /><br>
+                                <input type='password' name='password' placeholder='كلمة المرور' /><br>
+                                <input type='hidden' name='signin'>
+                                <p style='color: #F00;'>{{err}}</p>
+                                <input type='submit' value='تسجل الدخول' class='mdl-button'><br><br>
+                                <a href='#inscription' >إنشاء حساب جديد</a>
+                            </p>
+                        </form>";
+                }
 
                 ?>
+                <p><hr></p>
+                <p><a href='#home' >الصفحة الرئسية</a></p>
+                <p><a href='#about' >من نكون</a></p>
+                <p><a href='#guestbook' >سجل الزوار</a></p>
 
-                <!--script id='fbt3syb'>(function(i){var f,s=document.getElementById(i);f=document.createElement('iframe');f.src='//button.flattr.com/view/?fid=pogowz&url='+encodeURIComponent(document.URL);f.title='Flattr';f.height=62;f.width=55;f.style.borderWidth=0;s.parentNode.insertBefore(f,s);})('fbt3syb');</script-->
+                <?php
+                if (isset($_SESSION["signin"])) {
+                    echo "
+                        <p><a href='#add_exo' >إضافة تمرين</a></p>
+                        <p><a href='#' onclick='if (confirm(\"هل أنت متؤكد من الخروج ؟\") == true )window.location.assign(\"?logout\");'>تسجيل الخروج</a></p>";
+                }
+                ?>
 
             </div>        
         </div>

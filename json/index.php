@@ -14,12 +14,19 @@ if ( isset($_GET['exo']) )
 {
 	$tab =	'view_all_exo' ;
 	$tab .= intval($_GET['exo']) != 0 ? " WHERE exo_id=$_GET[exo]" : " " ;
-}	
-if ( isset($_GET['mat']) )		$tab =	'matiere' ;
-if ( isset($_GET['profile']) && isset( $_SESSION['signin']) ){
+}
+elseif ( isset($_GET['mat']) )
+{
+    $tab =	'matiere' ;
+}
+elseif ( isset($_GET['niveau']) )
+{
+    $tab =	'niveau_formation' ;
+}
+elseif ( isset($_GET['profile']) && isset( $_SESSION['signin']) )
+{
 	$tab =	"view_profile WHERE user_id=" ;
 	$tab .= intval($_GET['profile']) != 0 ? $_GET['profile'] : $_SESSION['signin'] ;
-	
 }
 
 if ($tab){

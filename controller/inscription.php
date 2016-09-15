@@ -46,11 +46,13 @@ require_once("../bin/include.php");
                     );";
             //echo $sql;
             $db->fetchAll($sql);
-            header('Location: ../?a=inscription_done');
-            exit;
+            header("Location: ../#/inscription_thx");
         }else{
             $msg = "&e=البريد الإلكتروني مسجل من قبل";
         }
     }
+    else
+        header("Location: ../#/inscription");
 
-header("Location: ../?a=inscription" . $msg );
+exit;
+

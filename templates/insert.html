@@ -1,7 +1,7 @@
 <div class="card" style="padding:0; background-color: #ecca54;"><img src="img/add_exo.png" style="width: 100%"></div>
 
 <div class="card" ng-controller="insController">
-    <form method="post" action="bin/controler_insert.php" accept-charset="UTF-8">
+    <form method="post" action="controller/insert.php" accept-charset="UTF-8">
         
 
 		<div id="frm" >
@@ -10,38 +10,14 @@
             <br><br>
             <p>
                 الإسم
-                <input type="hidden" name="user_id" value="" >
-                <input type="text" style="width: 100%" value="" disabled>
+                <input type="text" style="width: 100%" value="{{me[0].name}}" disabled>
             </p>
 
             <p>
                 المستوي / الصف <span class="red">*</span>
                 <select style="width: 100%" name="lv" class="turnintodropdown" required>
                     <option>&nbsp;</option>
-                    <option value="00">التكوين ما قبل التدريس</option>
-
-                    <option value="10">الإبتدائي</option>
-                    <option value="11">الإبتدائي السنة 1</option>
-                    <option value="12">الإبتدائي السنة 2</option>
-                    <option value="13">الإبتدائي السنة 3</option>
-                    <option value="14">الإبتدائي السنة 4</option>
-                    <option value="15">الإبتدائي السنة 5</option>
-
-                    <option value="20">التعليم المتوسط</option>
-                    <option value="21">التعليم المتوسط 1</option>
-                    <option value="22">التعليم المتوسط 2</option>
-                    <option value="23">التعليم المتوسط 3</option>
-                    <option value="24">التعليم المتوسط 4</option>
-
-                    <option value="40">التعليم الثنوي</option>
-                    <option value="41">التعليم الثنوي 1</option>
-                    <option value="42">التعليم الثنوي 2</option>
-                    <option value="43">التعليم الثنوي 3</option>
-
-                    <option value="50">التعليم الجامعي</option>
-
-                    <option value="60">التكوين المهني</option>
-
+                    <option value="{{ele.id_level}}" ng-repeat="ele in niveau">{{ele.title}}</option>
                 </select>
             </p>
 

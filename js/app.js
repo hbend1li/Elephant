@@ -22,14 +22,17 @@ var myElephant = angular
             .when('/inscription', {
                 templateUrl: 'templates/inscription.html'
             })
+            .when('/inscription_thx', {
+                templateUrl: 'templates/inscription_done.html'
+            })
             .when('/profile', {
                 templateUrl: 'templates/profile.html'
             })
             .when('/guestbook', {
                 templateUrl: 'templates/guestbook.html'
             })
-            .when('/thx', {
-                templateUrl: 'templates/thx.html'
+            .when('/guestbook_thx', {
+                templateUrl: 'templates/guestbook_done.html'
             })
             .when('/logout', {
                 templateUrl: '?logout'
@@ -45,7 +48,7 @@ var myElephant = angular
 // main page - list of all exercice
 .controller('mainController', function ($scope, $http, $location) {
     
-    $http.get('controller/list.php?exo')
+    $http.get('json/?exo')
         .then(function(res){
             $scope.depo = res.data;
             console.log( 'exo' );
@@ -76,11 +79,25 @@ var myElephant = angular
 
 // new exercice 
 .controller('insController', function ($scope, $http, $location) {
-     
-    $http.get('controller/list.php?mat')
+
+    $http.get('json/?profile')
+        .then(function(res){
+            $scope.me = res.data;
+            console.log( 'profile' );
+            console.log( res.data );
+        });
+
+    $http.get('json/?mat')
         .then(function(res){
             $scope.matiere = res.data;
             console.log( 'mat' );
+            console.log( res.data );
+        });
+
+    $http.get('json/?niveau')
+        .then(function(res){
+            $scope.niveau = res.data;
+            console.log( 'niveau' );
             console.log( res.data );
         });
 })
@@ -88,7 +105,7 @@ var myElephant = angular
 // set profile 
 .controller('profileController', function ($scope, $http, $location) {
      
-    $http.get('controller/list.php?profile')
+    $http.get('json/?profile')
         .then(function(res){
             $scope.profile = res.data[0];
             console.log( 'profile' );
@@ -123,7 +140,7 @@ var myElephant = angular
     ];
 */
 
-    $http.get('controller/list.php?exo='+ $scope.exoId)
+    $http.get('json/?exo='+ $scope.exoId)
         .then(function(res){
             
             // replace res.data[0].niveau = 10 to res.data[0].niveau = الإبتدائي

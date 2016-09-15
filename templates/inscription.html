@@ -1,9 +1,9 @@
 <div class="card" style="padding:0; background-color: #caee00;"><img src="img/image5203.png" style="width: 100%"></div>
 
 <div class="card" >
-    <form method="post" action="bin/controler_inscription.php" accept-charset="UTF-8" autocomplete="off">
 
-        <div id="frm" >
+    <div id="frm" >
+        <form method="post" action="controller/inscription.php" accept-charset="UTF-8">
 
             <p>
                 الإسم و اللقب <span class="red">*</span>
@@ -107,26 +107,22 @@
 
             <p>
                 <label style="cursor: pointer">
-                <input type="checkbox" name="lic" value="1" required> 
+                <input type="checkbox" name="lic" value="1" required>
                 الموافقة على الترخيص <span class="red">*</span>
                 </label>
 
-                <!--label style="cursor: pointer">
-                عدم الموافقة على الترخيص
-                <input type="radio" name="lic" value="0" checked onclick="sendButton.disabled = true;"></label-->
+
             </p>
 
             <p>
-
-                <input type="hidden" name="signin" value="signin">
-                <input type="submit" value="حفض" name="sendButton" disabled>
-                <!--input type="reset" value="مسح الخنات" class="mdl-button"-->
+                <input type="submit" value="حفض" name="sendButton">
             </p>
 
             <p>
               يجب ملء جميع الخانة التي تحتوي علي [ <span class="red">*</span> ]
             </p>
-        </div>
-    </form>
+        </form>
+    </div>
+
 </div>
 
